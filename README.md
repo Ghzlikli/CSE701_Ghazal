@@ -56,7 +56,7 @@ Our code mainly depends on a class of objects called `Chromosome`. The main obje
 
 - **Mutation**: We used the swap mutation method. In this method, two random genes of the offspring chromosomes are swapped. This ensures enough diversity in the population. We dedicated 20% of the new population in each iteration to this method.
 
-- **Annealing**: We used the inversion method to find a new neighbor of the current chromosome. In this method, the genes between two randomly selected points are inversed.  In each iteration, 15% of the population is improved using the annealing method. For the parameters, we set the default initial temperature to 10 and decrease it by a rate of $\alpha^{(k-1)}-1$, where $\alpha$ is 0.95, and $k$ is the current iteration. By default, the algorithm iterates 100 times.
+- **Annealing**: We used the inversion method to find a new neighbor of the current chromosome. In this method, the genes between two randomly selected points are inverted.  In each iteration, 15% of the population is improved using the annealing method. For the parameters, we set the default initial temperature to 10 and decrease it by a rate of $\alpha^{(k-1)}-1$, where $\alpha$ is 0.95, and $k$ is the current iteration. By default, the algorithm iterates 100 times.
 
 Finally, for the Selection phase, we employ a roulette wheel approach. It assigns higher probabilities to better solutions (fittest chromosomes).
 
