@@ -201,5 +201,5 @@ The `matrix.hpp` and `timer.hpp` are retrieved from Shoshany, Barak [Lecture Not
 
 Copyright (c) 2021 [Ghazal Khalili](mailto:khalili.ghazal.97@gmail.com).
 
-If you use this class template in your code, please acknowledge the author and provide a link to the [GitHub repository](https://github.com/Ghzlikli/CSE701_Ghazal). Thank you!
+If you use this code or the class templates in your code, please acknowledge the author and provide a link to the [GitHub repository](https://github.com/Ghzlikli/CSE701_Ghazal). Thank you!
 
