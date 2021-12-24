@@ -17,7 +17,7 @@ Travelling Salesman Problem (TSP) is a well-known problem in the Combinatorial O
 
 There are some famous randomized algorithms called Meta-heuristics, some of which are stimulated by observations from nature. Ants colony optimization algorithm, Artificial bee colony algorithm, Swarm intelligence, Genetic algorithm, Simulated annealing, and Tabu search are some examples of meta-heuristic algorithms.
 
-Genetic Algorithm tries to search the solution space as much as possible, which is an excellent feature in finding the optimal solution in larger dimensions. However, it might be stuck in the local optimum.
+Genetic Algorithm tries to search the solution space as much as possible, which is an excellent feature in finding the optimal solution in larger dimensions. However, it might get stuck in the local optimum.
 
 Simulated Annealing is another optimization algorithm inspired by the heating and controlled cooling of metal in the annealing process. The advantage of this algorithm is that it tries to scape the local optimum and reach the global optimum.
 
