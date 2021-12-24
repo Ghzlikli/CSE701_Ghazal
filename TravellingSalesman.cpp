@@ -104,7 +104,15 @@ int main()
     progressbar<double> prg; // An object to print the progress in descrete steps
 
     // Reading the configuration file
-    config configuration("config.cfg");
+    try
+    {
+        config configuration("config.cfg");
+    }
+    catch (const exception &e)
+    {
+        cout << "Error: " << e.what() << '\n';
+        return -1;
+    }
     // The path of the data set file
     string datafile;
     // Defining the parameters of our algorithm (the default values are given)
