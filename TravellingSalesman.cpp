@@ -2,7 +2,7 @@
  * @file TravellingSalesman.cpp
  * @author Ghazal Khalili (khalilig@mcmaster.ca)
  * @brief Solving Traveling Salesman Problem using Genetic Algorithm and Simulated Annealing
- * @version 0.2
+ * @version 1.2
  * @date 2021-12-23
  *
  * @copyright Copyright (c) 2021
@@ -103,16 +103,6 @@ int main()
     timer t;                   // An object helping to calculate the run time
     progressbar<double> prg; // An object to print the progress in descrete steps
 
-    // Reading the configuration file
-    try
-    {
-        config configuration("config.cfg");
-    }
-    catch (const exception &e)
-    {
-        cout << "Error: " << e.what() << '\n';
-        return -1;
-    }
     // The path of the data set file
     string datafile;
     // Defining the parameters of our algorithm (the default values are given)
@@ -127,6 +117,8 @@ int main()
 
     try
     {
+        // Reading the configuration file
+        config configuration("config.cfg");
         datafile = configuration.get_value_string("datafile");
         double signed_v = configuration.get_value("pop_size", 50);
         if (signed_v < 0)
@@ -184,12 +176,26 @@ int main()
     }
 
     // Reading the data
-    csv<double> dataset(datafile);
-    // Saving our data set into a matrix
-    matrix<double> GeneData(dataset.get_NRows(), (dataset.get_NCols() + 1));
+    uint64_t Nrows, Ncols;
     try
     {
+        csv<double> dataset(datafile);
+        Nrows = dataset.get_NRows();
+        Ncols = dataset.get_NCols();
+    }
+    catch (const exception &e)
+    {
+        cout << "Error: " << e.what() << '\n';
+        return -1;
+    }
+    // Saving our data set into a matrix
+    matrix<double> GeneData(Nrows, (Ncols + 1));
+    vector<double> nodes;
+    try
+    {
+        csv<double> dataset(datafile);
         GeneData = dataset.read_data();
+        nodes = dataset.get_row_numbers();
     }
     catch (const exception &e)
     {
@@ -207,7 +213,6 @@ int main()
     prg.print_progress();
 
     // Generating an initial population of size "pop_size"
-    vector<double> nodes = dataset.get_row_numbers();
     vector<chromosome<double>> population = Pop_Generator(nodes, pop_size);
     cout << "\nPrior to any optimization, ";
     double sum_ov = 0;
