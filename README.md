@@ -217,7 +217,7 @@ Any feedback or request is highly appreciated through [open a new issue](https:/
 
 ## Author and copyright
 
-Copyright (c) 2021 [Ghazal Khalili](mailto:khalili.ghazal.97@gmail.com).
+Copyright (c) 2022 [Ghazal Khalili](mailto:khalili.ghazal.97@gmail.com).
 
 If you use this class template in your code, please acknowledge the author and provide a link to the [GitHub repository](https://github.com/Ghzlikli/TSP-Hybrid_Optimization). 
 
