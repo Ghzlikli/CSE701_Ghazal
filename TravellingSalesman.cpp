@@ -2,10 +2,10 @@
  * @file TravellingSalesman.cpp
  * @author Ghazal Khalili (khalilig@mcmaster.ca)
  * @brief Solving Traveling Salesman Problem using Genetic Algorithm and Simulated Annealing
- * @version 1.2
- * @date 2021-12-23
+ * @version 1.1
+ * @date 2022-01-01
  *
- * @copyright Copyright (c) 2021
+ * @copyright Copyright (c) 2022
  *
  */
 #include <iostream>
@@ -100,7 +100,7 @@ int main()
      * A dynamic method to solve TSP using the combination of Genetic algorithm and Simulated annealing algorithm
      */
 
-    timer t;                   // An object helping to calculate the run time
+    timer t;                 // An object helping to calculate the run time
     progressbar<double> prg; // An object to print the progress in descrete steps
 
     // The path of the data set file
@@ -200,6 +200,7 @@ int main()
     catch (const exception &e)
     {
         cout << e.what();
+        return -1;
     }
     // Updating and printing the progress
     prg.update_progress(10);
@@ -213,6 +214,7 @@ int main()
     prg.print_progress();
 
     // Generating an initial population of size "pop_size"
+    
     vector<chromosome<double>> population = Pop_Generator(nodes, pop_size);
     cout << "\nPrior to any optimization, ";
     double sum_ov = 0;
